@@ -80,6 +80,19 @@
       <p>
         <ons-button modifier="large" id="square">決済する</ons-button>
       </p>
+
+      <!-- 追記（ここから） -->
+      <!-- ダイアログのテンプレート -->
+      <ons-alert-dialog id="dialog">
+        <div class="alert-dialog-title"></div>
+        <div class="alert-dialog-content">
+
+        </div>
+        <div class="alert-dialog-footer">
+          <button class="alert-dialog-button" onclick="hideDialog()">OK</button>
+        </div>
+      </ons-alert-dialog>
+      <!-- 追記（ここまで） -->
     </ons-page>
     <script src="vendors/onsenui/js/onsenui.min.js"></script>
     <script src="vendors/jquery/dist/jquery.min.js"></script>

@@ -39,4 +39,35 @@ ons.ready(function() {
     // POSレジアプリ呼び出し
     location.href = uri;
   });
+
+  // onclick の中にだけは入れない
+  if (location.search) {
+    try{
+      // コールバックされた場合
+      var params = JSON.parse(
+        decodeURIComponent(
+          location.search.replace('?data=', '')
+        ));
+      if (params.status == 'ok') {
+        // 決済完了
+        $('.alert-dialog-title').text('決済処理完了');
+        $('.alert-dialog-content').text('取引IDは' + params.transaction_id + 'です');
+        $('#dialog').show();
+      }else{
+        // 決済エラー
+        $('.alert-dialog-title').text('決済処理失敗');
+        $('.alert-dialog-content').text('エラーコード：' + params.error_code);
+        $('#dialog').show();
+      }
+    } catch(e) {
+      // エラーの場合
+      $('.alert-dialog-title').text('決済処理失敗');
+      $('.alert-dialog-content').text('データが不正です');
+      $('#dialog').show();
+    }
+  }
+
+  var hideDialog = function() {
+    $('#dialog').hide();
+  };
 });
