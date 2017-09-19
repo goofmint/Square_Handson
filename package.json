@@ -12,6 +12,7 @@
     "body-parser": "^1.18.0",
     "ejs": "^2.5.7",
     "express": "^4.15.4",
+    "unirest": "^0.5.1",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
