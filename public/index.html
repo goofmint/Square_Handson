@@ -17,19 +17,63 @@
   </head>
   <body>
     <!-- ons-page でページを定義 -->
+    <ons-page>
       <!-- ツールバー -->
+      <ons-toolbar>
+        <div class="center">Square APIデモ</div>
+      </ons-toolbar>
       
       <!-- リスト -->
+      <ons-list>
         
         <!-- 決済額 -->
+        <ons-list-header>決済額</ons-list-header>
+        <ons-list-item>
+          <ons-input id="price" placeholder="100" float></ons-input>
+        </ons-list-item>
         
         <!-- 決済に関する説明 -->
+        <ons-list-header>決済説明</ons-list-header>
+        <ons-list-item>
+          <ons-input id="notes" placeholder="取引に関する説明" float></ons-input>
+        </ons-list-item>
         
         <!-- 決済方法（複数選択可） -->
+        <ons-list-header>決済方法</ons-list-header>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox input-id="credit-card" value="credit_card" name="supported_tender_types[]"></ons-checkbox>
+          </label>
+          <label for="credit-card" class="center">
+            クレジットカード
+          </label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox input-id="cash" value="cash" name="supported_tender_types[]"></ons-checkbox>
+          </label>
+          <label for="cash" class="center">
+            現金
+          </label>
+        </ons-list-item>
+        <ons-list-item tappable>
+          <label class="left">
+            <ons-checkbox input-id="other" value="other" name="supported_tender_types[]"></ons-checkbox>
+          </label>
+          <label for="other" class="center">
+            その他
+          </label>
+        </ons-list-item>
+      </ons-list>
       
       <!-- 決済開始するためのボタン -->
-    
+      <p>
+        <ons-button modifier="large" id="square">決済する</ons-button>
+      </p>
+    </ons-page>
+
     <script src="vendors/onsenui/js/onsenui.min.js"></script>
     <script src="vendors/jquery/dist/jquery.min.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

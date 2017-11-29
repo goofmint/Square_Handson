@@ -29,6 +29,34 @@
             <label for="inputName">住所</label>
             <input type="text" class="form-control" name="address" id="inputAddress" placeholder="住所">
           </div>
+          <!-- 追加ここから -->
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>カード番号</label>
+                <div id="sq-card-number"></div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>CVC</label>
+                <div id="sq-cvv"></div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>有効期限</label>
+                <div id="sq-expiration-date"></div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group">
+                <label>郵便番号</label>
+                <div id="sq-postal-code"></div>
+              </div>
+            </div>
+          </div>
+          <!-- 追加ここまで -->
           <p>
             <div class="row">
               <div class="col-md-3 col-md-offset-3">
@@ -42,6 +70,12 @@
               </div>
             </div>
           </p>
+          <input type="hidden" name="nonce">
+          <input type="hidden" name="card_brand">
+          <input type="hidden" name="last_4">
+          <input type="hidden" name="exp_month">
+          <input type="hidden" name="exp_year">
+          <input type="hidden" name="billing_postal_code">
           <button type="submit" class="btn btn-primary" id="order">注文する</button>
         </form>
     </div>
